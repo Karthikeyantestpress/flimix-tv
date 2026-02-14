@@ -145,7 +145,7 @@ private fun MovieGridItem(
             .padding(6.dp)
             .tvFocusScale(
                 focusedScale = 1.08f,
-                focusedElevation = 20.dp,
+                focusedElevation = 0.dp,
                 shape = RoundedCornerShape(CardRadius),
             )
             .focusable()

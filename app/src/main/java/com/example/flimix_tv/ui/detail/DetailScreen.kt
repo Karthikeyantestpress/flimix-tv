@@ -17,9 +17,14 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -111,29 +116,46 @@ fun DetailScreen(
                         maxLines = 3,
                     )
                     Spacer(modifier = Modifier.height(8.dp))
-                    Box(
-                        modifier = Modifier
-                            .focusRequester(playFocusRequester)
-                            .tvFocusBorder(
-                                focusedBorderWidth = 4.dp,
-                                focusColor = PrimaryBlue,
-                                shape = RoundedCornerShape(8.dp),
-                            )
-                            .focusable()
-                            .clickable(onClick = onPlayClick)
-                            .background(MaterialTheme.colorScheme.primary, RoundedCornerShape(8.dp))
-                            .padding(horizontal = 32.dp, vertical = 16.dp),
-                        contentAlignment = Alignment.Center,
-                    ) {
-                        Text(
-                            "Play Now",
-                            style = MaterialTheme.typography.titleMedium,
-                            color = MaterialTheme.colorScheme.onPrimary,
-                        )
-                    }
+                    PlayNowButton(
+                        focusRequester = playFocusRequester,
+                        onClick = onPlayClick,
+                    )
                 }
             }
             LaunchedEffect(Unit) { playFocusRequester.requestFocus() }
         }
+    }
+}
+
+@OptIn(ExperimentalTvMaterial3Api::class)
+@Composable
+private fun PlayNowButton(
+    focusRequester: FocusRequester,
+    onClick: () -> Unit,
+) {
+    var isFocused by remember { mutableStateOf(false) }
+    val backgroundColor = if (isFocused) MaterialTheme.colorScheme.primary else Color.White
+    val textColor = if (isFocused) MaterialTheme.colorScheme.onPrimary else Color.Black
+
+    Box(
+        modifier = Modifier
+            .focusRequester(focusRequester)
+            .onFocusChanged { isFocused = it.isFocused }
+            .tvFocusBorder(
+                focusedBorderWidth = 4.dp,
+                focusColor = PrimaryBlue,
+                shape = RoundedCornerShape(8.dp),
+            )
+            .focusable()
+            .clickable(onClick = onClick)
+            .background(backgroundColor, RoundedCornerShape(8.dp))
+            .padding(horizontal = 32.dp, vertical = 16.dp),
+        contentAlignment = Alignment.Center,
+    ) {
+        Text(
+            "Play Now",
+            style = MaterialTheme.typography.titleMedium,
+            color = textColor,
+        )
     }
 }

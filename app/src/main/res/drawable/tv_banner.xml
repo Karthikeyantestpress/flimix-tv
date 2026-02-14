@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Flimix TV app card: blue background for leanback launcher -->
+<!-- Flimix TV app card: gradient background for leanback launcher -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <solid android:color="#00A8E1" />
+    <gradient
+        android:startColor="#00A8E1"
+        android:centerColor="#7C3AED"
+        android:endColor="#06B6D4"
+        android:angle="270" />
     <corners android:radius="8dp" />
 </shape>

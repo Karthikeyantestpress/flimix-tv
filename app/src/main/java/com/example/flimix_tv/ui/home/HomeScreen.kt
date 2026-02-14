@@ -26,6 +26,8 @@ import coil.compose.AsyncImage
 import com.example.flimix_tv.data.model.Movie
 import com.example.flimix_tv.ui.components.SkeletonCard
 import com.example.flimix_tv.ui.components.TopBar
+import com.example.flimix_tv.ui.components.tvFocusBorder
+import com.example.flimix_tv.ui.theme.PrimaryBlue
 import com.example.flimix_tv.viewmodel.UiState
 
 @OptIn(ExperimentalTvMaterial3Api::class)
@@ -109,8 +111,14 @@ private fun MovieGridItem(
     Column(
         modifier = modifier
             .fillMaxWidth()
+            .tvFocusBorder(
+                focusedBorderWidth = 4.dp,
+                focusColor = PrimaryBlue,
+                shape = RoundedCornerShape(12.dp),
+            )
             .focusable()
-            .clickable(onClick = onClick),
+            .clickable(onClick = onClick)
+            .padding(4.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         AsyncImage(

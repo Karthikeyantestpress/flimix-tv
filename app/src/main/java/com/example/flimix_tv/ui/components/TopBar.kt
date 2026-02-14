@@ -13,12 +13,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.unit.dp
 import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Text
 import com.example.flimix_tv.ui.theme.BackgroundDark
 import com.example.flimix_tv.ui.theme.PrimaryBlue
+import com.example.flimix_tv.ui.components.tvFocusBorder
 
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
@@ -45,6 +47,11 @@ fun TopBar(
             style = MaterialTheme.typography.titleMedium,
             color = Color.White,
             modifier = Modifier
+                .tvFocusBorder(
+                    focusedBorderWidth = 3.dp,
+                    focusColor = PrimaryBlue,
+                    shape = RoundedCornerShape(8.dp),
+                )
                 .focusable()
                 .clickable(onClick = onMoviesClick)
                 .padding(vertical = 8.dp, horizontal = 12.dp),

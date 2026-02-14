@@ -30,6 +30,8 @@ import androidx.tv.material3.Text
 import coil.compose.AsyncImage
 import com.example.flimix_tv.data.model.Movie
 import com.example.flimix_tv.ui.components.TopBar
+import com.example.flimix_tv.ui.components.tvFocusBorder
+import com.example.flimix_tv.ui.theme.PrimaryBlue
 
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
@@ -112,6 +114,11 @@ fun DetailScreen(
                     Box(
                         modifier = Modifier
                             .focusRequester(playFocusRequester)
+                            .tvFocusBorder(
+                                focusedBorderWidth = 4.dp,
+                                focusColor = PrimaryBlue,
+                                shape = RoundedCornerShape(8.dp),
+                            )
                             .focusable()
                             .clickable(onClick = onPlayClick)
                             .background(MaterialTheme.colorScheme.primary, RoundedCornerShape(8.dp))

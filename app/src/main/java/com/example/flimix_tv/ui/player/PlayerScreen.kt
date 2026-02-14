@@ -1,6 +1,7 @@
 package com.example.flimix_tv.ui.player
 
 import android.view.KeyEvent
+import android.view.View
 import android.view.ViewGroup
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Box
@@ -8,8 +9,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.key.onPreviewKeyEvent
 import androidx.compose.ui.platform.LocalContext
@@ -29,8 +32,15 @@ fun PlayerScreen(
 ) {
     val context = LocalContext.current
     val playerViewRef = remember { mutableStateOf<PlayerView?>(null) }
+    var isControllerVisible by remember { mutableStateOf(true) }
 
-    BackHandler(onBack = onBack)
+    BackHandler {
+        if (isControllerVisible) {
+            playerViewRef.value?.hideController()
+        } else {
+            onBack()
+        }
+    }
 
     val player = remember {
         ExoPlayer.Builder(context).build().apply {
@@ -79,6 +89,11 @@ fun PlayerScreen(
                     layoutParams = ViewGroup.LayoutParams(
                         ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT,
+                    )
+                    setControllerVisibilityListener(
+                        PlayerView.ControllerVisibilityListener { visibility ->
+                            isControllerVisible = (visibility == View.VISIBLE)
+                        }
                     )
                 }.also { playerViewRef.value = it }
             },

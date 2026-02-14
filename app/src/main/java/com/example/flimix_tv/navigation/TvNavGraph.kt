@@ -12,15 +12,21 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.flimix_tv.ui.detail.DetailScreen
 import com.example.flimix_tv.ui.home.HomeScreen
+import com.example.flimix_tv.ui.player.PlayerScreen
 import com.example.flimix_tv.ui.splash.SplashScreen
 import com.example.flimix_tv.viewmodel.HomeViewModel
 
 const val ROUTE_SPLASH = "splash"
 const val ROUTE_HOME = "home"
 const val ROUTE_DETAIL = "detail/{movieId}"
+const val ROUTE_PLAYER = "player/{movieId}"
 
 fun NavHostController.navigateToDetail(movieId: Int) {
     navigate("detail/$movieId")
+}
+
+fun NavHostController.navigateToPlayer(movieId: Int) {
+    navigate("player/$movieId")
 }
 
 @Composable
@@ -64,13 +70,31 @@ fun TvNavGraph(
             if (movie != null) {
                 DetailScreen(
                     movie = movie,
-                    onPlayClick = { },
+                    onPlayClick = {
+                        homeViewModel.lastPlayUrl = movie.playUrl
+                        navController.navigateToPlayer(movie.id)
+                    },
                     onMoviesClick = {
                         navController.navigate(ROUTE_HOME) {
                             popUpTo(ROUTE_HOME) { inclusive = true }
                             launchSingleTop = true
                         }
                     },
+                )
+            } else {
+                LaunchedEffect(Unit) { navController.popBackStack() }
+            }
+        }
+        composable(
+            route = ROUTE_PLAYER,
+            arguments = listOf(navArgument("movieId") { type = NavType.IntType }),
+        ) { backStackEntry ->
+            val movieId = backStackEntry.arguments?.getInt("movieId") ?: return@composable
+            val playUrl = homeViewModel.getMovieById(movieId)?.playUrl ?: homeViewModel.lastPlayUrl
+            if (!playUrl.isNullOrBlank()) {
+                PlayerScreen(
+                    playUrl = playUrl,
+                    onBack = { navController.popBackStack() },
                 )
             } else {
                 LaunchedEffect(Unit) { navController.popBackStack() }

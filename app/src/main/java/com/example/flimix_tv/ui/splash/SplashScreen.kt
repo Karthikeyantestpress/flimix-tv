@@ -19,7 +19,6 @@ import androidx.compose.ui.graphics.lerp
 import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Text
-import com.example.flimix_tv.ui.theme.BackgroundDark
 import com.example.flimix_tv.ui.theme.PrimaryBlue
 import kotlinx.coroutines.delay
 
@@ -29,43 +28,44 @@ fun SplashScreen(
     onFinish: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    var showF by remember { mutableStateOf(true) }
+    var showLogo by remember { mutableStateOf(true) }
     val colorProgress = remember { Animatable(0f) }
 
     LaunchedEffect(Unit) {
-        delay(600)
-        showF = false
+        delay(500)
+        showLogo = false
     }
 
-    LaunchedEffect(showF) {
-        if (!showF) {
+    LaunchedEffect(showLogo) {
+        if (!showLogo) {
             colorProgress.snapTo(0f)
             colorProgress.animateTo(
                 targetValue = 1f,
-                animationSpec = tween(durationMillis = 1200, easing = LinearEasing),
+                animationSpec = tween(durationMillis = 1000, easing = LinearEasing),
+                label = "color"
             )
         }
     }
 
     LaunchedEffect(Unit) {
-        delay(2600)
+        delay(2400)
         onFinish()
     }
 
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(BackgroundDark),
+            .background(Color.Black),
         contentAlignment = Alignment.Center,
     ) {
-        if (showF) {
+        if (showLogo) {
             Text(
                 text = "F",
                 style = MaterialTheme.typography.displayLarge,
-                color = Color.White,
+                color = Color.White.copy(alpha = 0.9f),
             )
         } else {
-            val color = lerp(Color.Gray, PrimaryBlue, colorProgress.value)
+            val color = lerp(Color.White.copy(alpha = 0.6f), PrimaryBlue, colorProgress.value)
             Text(
                 text = "Flimix",
                 style = MaterialTheme.typography.displayMedium,

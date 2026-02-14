@@ -6,9 +6,11 @@ import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -18,17 +20,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Text
 import coil.compose.AsyncImage
 import com.example.flimix_tv.data.model.Movie
+import com.example.flimix_tv.ui.components.FocusScale
 import com.example.flimix_tv.ui.components.SkeletonCard
 import com.example.flimix_tv.ui.components.TopBar
-import com.example.flimix_tv.ui.components.tvFocusBorder
-import com.example.flimix_tv.ui.theme.PrimaryBlue
+import com.example.flimix_tv.ui.theme.CardDark
 import com.example.flimix_tv.viewmodel.UiState
+
+private val CardRadius = 12.dp
+private val GridSpacing = 28.dp
+private val ContentPadding = 48.dp
 
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
@@ -42,12 +49,21 @@ fun HomeScreen(
         TopBar(onMoviesClick = onMoviesClick)
         when (val state = uiState) {
             is UiState.Loading -> {
+                Column(modifier = Modifier.padding(horizontal = ContentPadding)) {
+                    Spacer(modifier = Modifier.height(24.dp))
+                    Text(
+                        text = "Movies",
+                        style = MaterialTheme.typography.headlineSmall,
+                        color = MaterialTheme.colorScheme.onBackground,
+                    )
+                    Spacer(modifier = Modifier.height(20.dp))
+                }
                 LazyVerticalGrid(
                     columns = GridCells.Fixed(4),
                     modifier = Modifier.fillMaxSize(),
-                    horizontalArrangement = Arrangement.spacedBy(24.dp),
-                    verticalArrangement = Arrangement.spacedBy(24.dp),
-                    contentPadding = PaddingValues(32.dp),
+                    horizontalArrangement = Arrangement.spacedBy(GridSpacing),
+                    verticalArrangement = Arrangement.spacedBy(GridSpacing),
+                    contentPadding = PaddingValues(start = ContentPadding, end = ContentPadding, bottom = ContentPadding),
                 ) {
                     items(count = 8) {
                         SkeletonCard()
@@ -58,13 +74,14 @@ fun HomeScreen(
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(32.dp),
+                        .padding(ContentPadding),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center,
                 ) {
                     Text(
                         text = state.message,
                         style = MaterialTheme.typography.bodyLarge,
+                        color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.8f),
                     )
                 }
             }
@@ -75,15 +92,28 @@ fun HomeScreen(
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center,
                     ) {
-                        Text("No movies", style = MaterialTheme.typography.bodyLarge)
+                        Text(
+                            "No movies",
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.7f),
+                        )
                     }
                 } else {
+                    Column(modifier = Modifier.padding(horizontal = ContentPadding)) {
+                        Spacer(modifier = Modifier.height(24.dp))
+                        Text(
+                            text = "All Movies",
+                            style = MaterialTheme.typography.headlineSmall,
+                            color = MaterialTheme.colorScheme.onBackground,
+                        )
+                        Spacer(modifier = Modifier.height(20.dp))
+                    }
                     LazyVerticalGrid(
                         columns = GridCells.Fixed(4),
                         modifier = Modifier.fillMaxSize(),
-                        horizontalArrangement = Arrangement.spacedBy(24.dp),
-                        verticalArrangement = Arrangement.spacedBy(24.dp),
-                        contentPadding = PaddingValues(32.dp),
+                        horizontalArrangement = Arrangement.spacedBy(GridSpacing),
+                        verticalArrangement = Arrangement.spacedBy(GridSpacing),
+                        contentPadding = PaddingValues(start = ContentPadding, end = ContentPadding, bottom = ContentPadding),
                     ) {
                         items(
                             items = state.movies,
@@ -111,33 +141,37 @@ private fun MovieGridItem(
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .tvFocusBorder(
-                focusedBorderWidth = 4.dp,
-                focusColor = PrimaryBlue,
-                shape = RoundedCornerShape(12.dp),
+            .padding(6.dp)
+            .tvFocusScale(
+                focusedScale = 1.08f,
+                focusedElevation = 20.dp,
+                shape = RoundedCornerShape(CardRadius),
             )
             .focusable()
-            .clickable(onClick = onClick)
-            .padding(4.dp),
+            .clickable(onClick = onClick),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        AsyncImage(
-            model = movie.thumbnail,
-            contentDescription = movie.title,
+        Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .aspectRatio(16f / 9f)
-                .background(
-                    MaterialTheme.colorScheme.surfaceVariant,
-                    RoundedCornerShape(8.dp)
-                ),
-            contentScale = ContentScale.Crop,
-        )
+                .clip(RoundedCornerShape(CardRadius))
+                .background(CardDark),
+        ) {
+            AsyncImage(
+                model = movie.thumbnail,
+                contentDescription = movie.title,
+                modifier = Modifier.fillMaxSize(),
+                contentScale = ContentScale.Crop,
+            )
+        }
         Text(
             text = movie.title,
             style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onBackground,
-            modifier = Modifier.padding(top = 8.dp),
+            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.95f),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 10.dp),
             maxLines = 2,
         )
     }

@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName
 data class Movie(
     val id: Int,
     val title: String,
-    val year: Int,
+    val year: Int?,
     val genre: List<String>,
     val thumbnail: String,
     val cover: String?,

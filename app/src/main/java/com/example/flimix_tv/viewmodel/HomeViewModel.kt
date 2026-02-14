@@ -1,6 +1,7 @@
 package com.example.flimix_tv.viewmodel
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.flimix_tv.data.model.Movie
 import com.example.flimix_tv.data.repository.MovieRepository
@@ -20,8 +21,10 @@ sealed class UiState {
 }
 
 class HomeViewModel(
-    private val repository: MovieRepository = MovieRepository(),
-) : ViewModel() {
+    application: Application,
+) : AndroidViewModel(application) {
+
+    private val repository = MovieRepository(application)
 
     private val _uiState = MutableStateFlow<UiState>(UiState.Loading)
     val uiState: StateFlow<UiState> = _uiState.asStateFlow()

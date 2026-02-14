@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.tv.material3.ExperimentalTvMaterial3Api
 import com.example.flimix_tv.navigation.TvNavGraph
@@ -25,7 +26,14 @@ class MainActivity : ComponentActivity() {
                         .fillMaxSize()
                         .background(BackgroundDark),
                 ) {
-                    val homeViewModel: HomeViewModel = viewModel()
+                    val homeViewModel: HomeViewModel = viewModel(
+                        factory = object : ViewModelProvider.Factory {
+                            override fun <T : androidx.lifecycle.ViewModel> create(modelClass: Class<T>): T {
+                                @Suppress("UNCHECKED_CAST")
+                                return HomeViewModel(this@MainActivity.application) as T
+                            }
+                        }
+                    )
                     TvNavGraph(homeViewModel = homeViewModel)
                 }
             }

@@ -93,7 +93,7 @@ fun DetailScreen(
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
                         Text(
-                            text = movie.year.toString(),
+                            text = movie.year?.toString() ?: "",
                             style = MaterialTheme.typography.bodyLarge,
                             color = Color.White.copy(alpha = 0.9f),
                         )

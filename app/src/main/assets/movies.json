@@ -1,0 +1,313 @@
+{
+  "movies": [
+    {
+      "id": 58,
+      "title": "Padayappa",
+      "year": 1999,
+      "genre": [
+        "Drama",
+        "Action"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/other/17d7ec5ee2ed42a58fd63ab50fd662e2.avif",
+      "cover": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/other/fd848041e9d245089b46b09af09137c3.avif",
+      "description": "The death of Padaiyappa's father destroys his family. But his luck changes, and he is able to lead a prosperous life, until his nemesis plots to ruin his happiness once more.",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/61/video.m3u8"
+    },
+    {
+      "id": 57,
+      "title": "Story of Bunny",
+      "year": 2026,
+      "genre": [
+        "Comedy",
+        "Entertainment"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/93d70d26ea114b068788eb626fffe93e.jpg",
+      "cover": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/45b1ae36631644e5a0ccd2b80d5246b8.jpg",
+      "description": "Big Buck Bunny is a light-hearted animated short about a gentle, kind rabbit living peacefully in a forest.\r\nHis calm life is disturbed by three mischievous rodents who constantly bully and tease him.\r\nAfter enduring their pranks for too long, Bunny decides to stand up for himself.\r\nUsing cleverness instead of cruelty, he teaches the bullies a lesson in a humorous way.\r\nThe film delivers a fun message about self-respect, courage, and kindness without violence.",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/60/video.m3u8"
+    },
+    {
+      "id": 52,
+      "title": "Sathuranga Vettai",
+      "year": 2014,
+      "genre": [
+        "Heist",
+        "Crime"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/a5c093a82173470e968a5b75e9c8d1cf.jpg",
+      "cover": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/3908160a5fdb44ca908a2e4853bea2b4.jpg",
+      "description": "Sathuranga Vettai (2014) is a Tamil heist-thriller that revolves around the life of Gandhi Babu, a highly intelligent and smooth-talking con artist. He believes money is the ultimate goal of life and uses clever scams, psychological manipulation, and flawless planning to cheat people without any violence.\r\n\r\nThe film follows his journey through various cons\u2014selling fake snakes, running pyramid schemes, and luring greedy people into traps. But when his past victims unite against him and he gets entangled with dangerous people, Gandhi realizes that every smart move in this \"chess game\" of life has consequences.",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/56/video.m3u8"
+    },
+    {
+      "id": 51,
+      "title": "Mark Antony",
+      "year": 2023,
+      "genre": [
+        "Action/Comedy"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/5f0e8111d35b42f685eae0338dcd01f5.jpg",
+      "cover": null,
+      "description": "Mark Antony is a 2023 Indian Tamil-language science fiction action comedy film directed by Adhik Ravichandran. The film stars Vishal and SJ Suryah in dual",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/55/video.m3u8"
+    },
+    {
+      "id": 50,
+      "title": "Eleven",
+      "year": 2025,
+      "genre": [
+        "Thriller"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/8fa705ea48a644d286f57f1e1b0d10a7.jpg",
+      "cover": null,
+      "description": "Eleven is a 2025 Indian crime thriller film written and directed by Lokkesh Ajls. The film was shot simultaneously in Tamil and Telugu",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/54/video.m3u8"
+    },
+    {
+      "id": 49,
+      "title": "Madras Matinee",
+      "year": 2025,
+      "genre": [
+        "Entertainment"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/66d03f1337fe47cab2ae63c5df89b345.jpg",
+      "cover": null,
+      "description": "Madras Matinee is a 2025 Indian Tamil-language family drama film written, co-produced and directed by debutant director Karthikeyan Mani and produced under",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/53/video.m3u8"
+    },
+    {
+      "id": 48,
+      "title": "Pushpa",
+      "year": 2021,
+      "genre": [
+        "Action",
+        "Thriller"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/c1c3935a42c8496cbdb4fca3c4110784.jpg",
+      "cover": null,
+      "description": "Pushpa is an Indian Telugu-language action drama film series created by Sukumar and produced by Mythri Movie Makers, Muttamsetty Media and Sukumar Writings.",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/52/video.m3u8"
+    },
+    {
+      "id": 47,
+      "title": "The Family Star",
+      "year": 2024,
+      "genre": [
+        "Romantic/Drama"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/3dd6d4f8bec64e3091e39e670f74a425.jpg",
+      "cover": null,
+      "description": "The Family Star is a 2024 Indian Telugu-language romantic action drama film written and directed by Parasuram, and produced by Dil Raju and Sirish under Sri",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/51/video.m3u8"
+    },
+    {
+      "id": 46,
+      "title": "Master",
+      "year": 2021,
+      "genre": [
+        "Action",
+        "Thriller"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/baecc6edf73f4589bc969108c07c40a8.jpg",
+      "cover": null,
+      "description": "Master is a 2021 Indian Tamil-language action drama film directed by Lokesh Kanagaraj and produced by S. Xavier Britto under XB Film Creators",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/50/video.m3u8"
+    },
+    {
+      "id": 45,
+      "title": "Maharaja",
+      "year": 2024,
+      "genre": [
+        "Action",
+        "Thriller"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/other/70af1476191e427fbecc88bf9025e5f8.webp",
+      "cover": null,
+      "description": "The story follows a barber in Chennai who goes to the police station to retrieve his stolen dustbin",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/49/video.m3u8"
+    },
+    {
+      "id": 44,
+      "title": "Court",
+      "year": 2025,
+      "genre": [
+        "Politcs"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/other/fa9f6c97478c400f96181534137fdc68.webp",
+      "cover": null,
+      "description": "Court \u2013 State vs. A Nobody is a 2025 Indian Telugu-language legal drama film written and directed by Ram Jagadeesh in his directorial debut.",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/48/video.m3u8"
+    },
+    {
+      "id": 43,
+      "title": "Officer",
+      "year": 2018,
+      "genre": [
+        "Action"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/other/3f7319ccb178465bafc37d02dd79bbd9.webp",
+      "cover": null,
+      "description": "Officer is a 2018 Indian Telugu-language action film produced and directed by Ram Gopal Varma on his R Company Production banner.",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/47/video.m3u8"
+    },
+    {
+      "id": 42,
+      "title": "Kung Fu Panda",
+      "year": 2008,
+      "genre": [
+        "Comedy"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/ae273d3bfab544ed86e4ca310929c9fc.jpg",
+      "cover": null,
+      "description": "Kung Fu Panda is a 2008 American animated martial arts comedy film directed by John Stevenson and Mark Osborne and written by Jonathan Aibel and Glenn",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/46/video.m3u8"
+    },
+    {
+      "id": 41,
+      "title": "Good Bad Ugly",
+      "year": 2025,
+      "genre": [
+        "Action"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/other/e63bdb7082b24affa1b3006e404eac91.webp",
+      "cover": null,
+      "description": "Good Bad Ugly (shortened as GBU) is a 2025 Indian Tamil-language action comedy film directed by Adhik Ravichandran and produced by Mythri Movie Makers",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/45/video.m3u8"
+    },
+    {
+      "id": 40,
+      "title": "Doctor",
+      "year": 2021,
+      "genre": [
+        "Action/Comedy"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/other/fc6b995887a6480da63842ae9be8dbee.webp",
+      "cover": null,
+      "description": "It follows a military doctor, who seeks to rescue his ex-fianc\u00e9e's niece from a child trafficker. The film was officially announced in December 2019.",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/44/video.m3u8"
+    },
+    {
+      "id": 39,
+      "title": "Jigarthanda DoubleX",
+      "year": 2023,
+      "genre": [
+        "Action"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/other/0bb222090f12438fbcbfaf2129830be6.webp",
+      "cover": null,
+      "description": "In 1975, a filmmaker agrees to collaborate on a film with a gangster who wishes to become a famous actor.",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/43/video.m3u8"
+    },
+    {
+      "id": 38,
+      "title": "Mandela",
+      "year": 2021,
+      "genre": [
+        "Politcs"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/other/c359f5cecf0d4dd1a70e5daefe7c9ccc.webp",
+      "cover": null,
+      "description": "Mandela is a 2021 Indian Tamil-language political satire television film written and directed by Madonne Ashwin on his directorial debut",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/42/video.m3u8"
+    },
+    {
+      "id": 37,
+      "title": "Jagame Thandhiram",
+      "year": 2021,
+      "genre": [
+        "Entertainment"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/5f126c7fddea4d3c81bb41297ce618c8.jpg",
+      "cover": null,
+      "description": "It follows Suruli, a gangster from Madurai, who is recruited to help Peter Sprott, a British crime lord, to take down a rival",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/41/video.m3u8"
+    },
+    {
+      "id": 36,
+      "title": "Leo",
+      "year": 2022,
+      "genre": [
+        "Thriller"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/other/9081982c949441298cd8665d581d7444.webp",
+      "cover": null,
+      "description": "Leo is a 2023 Indian Tamil-language action thriller film directed by Lokesh Kanagaraj.",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/40/video.m3u8"
+    },
+    {
+      "id": 33,
+      "title": "Ambikapathy",
+      "year": 2013,
+      "genre": [
+        "Romantic/Drama"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/other/7e982f7d41084a378cc69f2362aea1fd.avif",
+      "cover": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/other/0a1008e8fa3f4e3ba6870ffafcabfc23.avif",
+      "description": "Ambikapathy is a romantic drama that tells the emotional and intense love story of Kundan (played by Dhanush), a boy from the holy city of Varanasi who falls deeply in love with Zoya (Sonam Kapoor) from childhood.",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/37/video.m3u8"
+    },
+    {
+      "id": 26,
+      "title": "Soorarai Pottru",
+      "year": 2020,
+      "genre": [
+        "Sci-fi",
+        "Politcs"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/3e55181364c141a1a216ad53c7805ce6.jpg",
+      "cover": null,
+      "description": "Soorarai Pottru (transl. Praise the Brave) is a 2020 Indian Tamil-language drama film directed by Sudha Kongara",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/24/video.m3u8"
+    },
+    {
+      "id": 25,
+      "title": "Iron Man",
+      "year": 2008,
+      "genre": [
+        "Sci-fi"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/2cc8b01f14a84f3b91b940b47b55cabf.jpeg",
+      "cover": null,
+      "description": "Iron Man is a 2008 American superhero film based on the Marvel Comics character of the same name",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/23/video.m3u8"
+    },
+    {
+      "id": 22,
+      "title": "Sarpatta Parambarai",
+      "year": 2021,
+      "genre": [
+        "Action"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/149b31a77d1d48bd874e2fe775d3d8d1.jpg",
+      "cover": null,
+      "description": "Sarpatta Parambarai ( transl. Sarpatta Clan) is a 2021 Indian Tamil-language historical sports action drama film directed by Pa. Ranjith",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/20/video.m3u8"
+    },
+    {
+      "id": 21,
+      "title": "Spider-Man",
+      "year": 2002,
+      "genre": [
+        "Action"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/d2beb297c17d42169edb02a126258497.jpeg",
+      "cover": null,
+      "description": "Spider-Man is a superhero in American comic books published by Marvel Comics. Created by writer-editor Stan Lee and artist Steve Ditko.",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/19/video.m3u8"
+    },
+    {
+      "id": 13,
+      "title": "Captain America",
+      "year": 2011,
+      "genre": [
+        "Thriller",
+        "Sci-fi"
+      ],
+      "thumbnail": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/uploads/image/450b7b513698436e9934cb10d14f9e4c.jpeg",
+      "cover": null,
+      "description": "Captain America is a superhero created by Joe Simon and Jack Kirby who appears in American comic books published by Marvel Comics",
+      "play_url": "https://s3.eu-central-1.wasabisys.com/flimix.testpress.in/transcoded/12/video.m3u8"
+    }
+  ],
+  "last_updated": "2026-02-14T12:58:42.322112+00:00Z"
+}

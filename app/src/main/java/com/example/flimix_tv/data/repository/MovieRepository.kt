@@ -1,23 +1,27 @@
 package com.example.flimix_tv.data.repository
 
+import android.content.Context
 import com.example.flimix_tv.data.model.Movie
-import com.example.flimix_tv.data.remote.MovieApi
-import com.example.flimix_tv.data.remote.RetrofitClient
+import com.example.flimix_tv.data.model.MoviesResponse
+import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.IOException
 
 /**
- * Repository for movies. Phase 1: getMovies() with no param.
- * Phase 2: getMovies(createdAfter = "2026-02-14") when ready.
+ * Repository for movies. Uses local movies.json from assets (no API) for fast loading.
  */
 class MovieRepository(
-    private val api: MovieApi = RetrofitClient.movieApi,
+    private val context: Context,
 ) {
+    private val gson = Gson()
+
     suspend fun getMovies(createdAfter: String? = null): List<Movie> = withContext(Dispatchers.IO) {
         try {
-            val response = api.getMovies(createdAfter = createdAfter)
-            response.movies
+            context.assets.open("movies.json").reader().use { reader ->
+                val response = gson.fromJson(reader.readText(), MoviesResponse::class.java)
+                response.movies
+            }
         } catch (e: IOException) {
             throw e
         }

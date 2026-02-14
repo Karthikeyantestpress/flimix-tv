@@ -14,6 +14,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.lerp
 import androidx.tv.material3.ExperimentalTvMaterial3Api
@@ -21,6 +22,11 @@ import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Text
 import com.example.flimix_tv.ui.theme.PrimaryBlue
 import kotlinx.coroutines.delay
+
+private val SplashViolet = Color(0xFF7C3AED)
+private val SplashCyan = Color(0xFF06B6D4)
+private val SplashPink = Color(0xFFEC4899)
+private val SplashTeal = Color(0xFF14B8A6)
 
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
@@ -54,17 +60,30 @@ fun SplashScreen(
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(Color.Black),
+            .background(
+                Brush.verticalGradient(
+                    colors = listOf(
+                        PrimaryBlue,
+                        SplashViolet,
+                        SplashPink,
+                        SplashCyan,
+                        SplashTeal,
+                        PrimaryBlue
+                    ),
+                    startY = 0f,
+                    endY = 2000f
+                )
+            ),
         contentAlignment = Alignment.Center,
     ) {
         if (showLogo) {
             Text(
                 text = "F",
                 style = MaterialTheme.typography.displayLarge,
-                color = Color.White.copy(alpha = 0.9f),
+                color = Color.White,
             )
         } else {
-            val color = lerp(Color.White.copy(alpha = 0.6f), PrimaryBlue, colorProgress.value)
+            val color = lerp(Color.White.copy(alpha = 0.9f), Color.White, colorProgress.value)
             Text(
                 text = "Flimix",
                 style = MaterialTheme.typography.displayMedium,

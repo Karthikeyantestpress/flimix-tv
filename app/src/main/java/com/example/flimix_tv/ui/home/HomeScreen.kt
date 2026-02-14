@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -27,7 +28,7 @@ import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Text
 import coil.compose.AsyncImage
 import com.example.flimix_tv.data.model.Movie
-import com.example.flimix_tv.ui.components.FocusScale
+import com.example.flimix_tv.ui.components.tvFocusScale
 import com.example.flimix_tv.ui.components.SkeletonCard
 import com.example.flimix_tv.ui.components.TopBar
 import com.example.flimix_tv.ui.theme.CardDark

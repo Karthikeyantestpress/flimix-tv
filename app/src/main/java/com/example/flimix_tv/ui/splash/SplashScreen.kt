@@ -41,8 +41,7 @@ fun SplashScreen(
             colorProgress.snapTo(0f)
             colorProgress.animateTo(
                 targetValue = 1f,
-                animationSpec = tween(durationMillis = 1000, easing = LinearEasing),
-                label = "color"
+                animationSpec = tween(durationMillis = 1000, easing = LinearEasing)
             )
         }
     }

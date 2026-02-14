@@ -28,24 +28,20 @@ fun Modifier.tvFocusScale(
     var isFocused by remember { mutableStateOf(false) }
     val scale by animateFloatAsState(
         targetValue = if (isFocused) focusedScale else 1f,
-        animationSpec = tween(durationMillis = 150),
-        label = "focusScale"
+        animationSpec = tween(durationMillis = 150)
     )
     val density = LocalDensity.current
     val elevationPx = with(density) { focusedElevation.toPx() }
-    val elevation by animateFloatAsState(
+    val elevationValue by animateFloatAsState(
         targetValue = if (isFocused) elevationPx else 0f,
-        animationSpec = tween(durationMillis = 150),
-        label = "focusElevation"
+        animationSpec = tween(durationMillis = 150)
     )
     this
         .onFocusChanged { isFocused = it.isFocused }
         .graphicsLayer {
             scaleX = scale
             scaleY = scale
-            shadowElevation = elevation
-            shape = shape
-            clip = true
+            shadowElevation = elevationValue
         }
         .zIndex(if (isFocused) 1f else 0f)
 }

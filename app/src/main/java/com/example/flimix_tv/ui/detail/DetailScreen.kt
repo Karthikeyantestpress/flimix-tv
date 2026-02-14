@@ -145,8 +145,7 @@ private fun PlayNowButton(
     var isFocused by remember { mutableStateOf(false) }
     val scale by animateFloatAsState(
         targetValue = if (isFocused) 1.04f else 1f,
-        animationSpec = tween(durationMillis = 120),
-        label = "playScale"
+        animationSpec = tween(durationMillis = 120)
     )
     val backgroundColor = if (isFocused) PrimaryBlue else Color.White
     val textColor = if (isFocused) Color.White else Color.Black
